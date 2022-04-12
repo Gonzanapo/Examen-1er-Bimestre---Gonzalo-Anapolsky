@@ -27,25 +27,36 @@ public class script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dias = dias_totales - dias_lluvia;
-        litros = 90 / 15; //en un dia recorre 90 km. Un litro son 15km, por lo tanto hago esta cuenta.
-        litros_lluvia = 110 / 15;
 
-        //dia normal
-        nafta = (autos * litros) * combustible;
-        float coste_nafta = nafta * dias;
-
-        //dia lluvia
-        nafta_lluvia = (autos * litros_lluvia) * combustible;
-        float coste_nafta_lluvia = nafta * dias;
-
-        combustible = coste_nafta + coste_nafta_lluvia;
+        if (dias_totales <= 5 || dias_lluvia < 0 || dias_lluvia > dias_totales)
+        {
+            Debug.Log("Error, intente cambiar alguna de estas variables: dias_totales (menor o igual a 5), dias_lluvia (mayor a los dias sin lluvia), dias_lluvia (negativo)");
+        }
+        else
+        {
 
 
 
+            dias = dias_totales - dias_lluvia;
+            litros = 90 / 15; //en un dia recorre 90 km. Un litro son 15km, por lo tanto hago esta cuenta.
+            litros_lluvia = 110 / 15;
 
-        Debug.Log("Una flota de " + autos + " unidades trabajando durante " + dias_totales + " días implicará un gasto de " + combustible + " pesos en concepto de combustible");
+            //dia normal
+            nafta = (autos * litros) * combustible;
+            float coste_nafta = nafta * dias;
 
+            //dia lluvia
+            nafta_lluvia = (autos * litros_lluvia) * combustible;
+            float coste_nafta_lluvia = nafta * dias;
+
+            combustible = coste_nafta + coste_nafta_lluvia;
+
+
+
+
+            Debug.Log("Una flota de " + autos + " unidades trabajando durante " + dias_totales + " días implicará un gasto de " + combustible + " pesos en concepto de combustible");
+
+        }
     }
 
     // Update is called once per frame
