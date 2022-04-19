@@ -28,7 +28,7 @@ public class script : MonoBehaviour
     void Start()
     {
 
-        if (dias_totales <= 5 || dias_lluvia < 0 || dias_lluvia > dias_totales)
+        if (dias_totales < 5 || dias_lluvia < 0 || dias_lluvia > dias_totales)
         {
             Debug.Log("Error, intente cambiar alguna de estas variables: dias_totales (menor o igual a 5), dias_lluvia (mayor a los dias sin lluvia), dias_lluvia (negativo)");
         }
@@ -47,7 +47,7 @@ public class script : MonoBehaviour
 
             //dia lluvia
             nafta_lluvia = (autos * litros_lluvia) * combustible;
-            float coste_nafta_lluvia = nafta * dias;
+            float coste_nafta_lluvia = nafta * dias_lluvia;
 
             combustible = coste_nafta + coste_nafta_lluvia;
 
