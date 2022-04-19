@@ -292,8 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0649691ff19cecb44a47f07110802b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autos: 10
-  dias_totales: 5
+  autos: 13
+  dias_totales: 8
   dias: 0
   dias_lluvia: 4
 --- !u!4 &2074754057
